@@ -15,10 +15,13 @@ def accion():
     if combo.current() == 0:
         combo.current(1)
     if combo.current() == 1:
-        boton=Button(ventana, text='Siii')
+        boton=Button(ventana, text='Siii', command=accion2)
         boton.pack()
 
-boton=Button(ventana, text='Mostar',command=accion)
+def accion2():
+    print('Funciona mi pes')
+
+boton=Button(ventana, text='Mostar', command=accion)
 boton.pack()
 
 ventana.mainloop()
