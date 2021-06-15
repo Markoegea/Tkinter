@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
+
+
 ventana=Tk()
 ventana.title('funciona!!')
 combo=Combobox(ventana)
@@ -11,6 +13,9 @@ combo.pack()
 def accion():
     if combo.current() == 0:
         combo.current(1)
+    if combo.current() == 1:
+        boton=Button(ventana, text='Siii')
+        boton.pack()
 
 boton=Button(ventana, text='Mostar',command=accion)
 boton.pack()
