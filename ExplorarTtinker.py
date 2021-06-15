@@ -5,20 +5,15 @@ from tkinter.ttk import *
 ventana=Tk()
 ventana.title('funciona!!')
 
-combo=Combobox(ventana)
-combo['values']=('HOMBRE', 'MUJER', 'Texto',9.8)
-combo.current(0)
-combo.grid(column=0, row=0)
-combo.pack()
+def verificar():
+    valor=checkeo.get()
+    if (valor == 1):
+        print('Ciclismo Seleccionado')
+    else:
+        print('Ciclismo no seleccionado')
 
-def accion():
-    if combo.current() == 0:
-        combo.current(1)
-    if combo.current() == 1:
-        boton=Button(ventana, text='Siii')
-        boton.pack()
-
-boton=Button(ventana, text='Mostar',command=accion)
-boton.pack()
+checkeo=IntVar()
+chkHobbie1= Checkbutton(ventana, text='Ciclismo', variable=checkeo, onvalue=1, offvalue=0, command=verificar)
+chkHobbie1.pack()
 
 ventana.mainloop()
