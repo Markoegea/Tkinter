@@ -5,15 +5,16 @@ from tkinter.ttk import *
 ventana=Tk()
 ventana.title('funciona!!')
 
-def verificar():
-    valor=checkeo.get()
+def seleccionar():
+    valor=sexo.get()
     if (valor == 1):
-        print('Ciclismo Seleccionado')
+        print('Femenino')
     else:
-        print('Ciclismo no seleccionado')
+        print('Masculino')
 
-checkeo=IntVar()
-chkHobbie1= Checkbutton(ventana, text='Ciclismo', variable=checkeo, onvalue=1, offvalue=0, command=verificar)
-chkHobbie1.pack()
-
+sexo=IntVar()
+rdSexo1= Radiobutton(ventana, text='Masculino', variable=sexo, value=0, command=seleccionar)
+rdSexo2= Radiobutton(ventana, text='Femenino', variable=sexo, value=1, command=seleccionar)
+rdSexo1.pack()
+rdSexo2.pack()
 ventana.mainloop()
