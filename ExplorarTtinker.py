@@ -5,9 +5,20 @@ from tkinter.ttk import *
 ventana=Tk()
 ventana.title('funciona!!')
 
-def verificar():
-    pass
+combo=Combobox(ventana)
+combo['values']=('HOMBRE', 'MUJER', 'Texto',9.8)
+combo.current(0)
+combo.grid(column=0, row=0)
+combo.pack()
 
-checkeo=IntVar()
+def accion():
+    if combo.current() == 0:
+        combo.current(1)
+    if combo.current() == 1:
+        boton=Button(ventana, text='Siii')
+        boton.pack()
+
+boton=Button(ventana, text='Mostar',command=accion)
+boton.pack()
 
 ventana.mainloop()
